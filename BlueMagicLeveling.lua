@@ -15,6 +15,8 @@ self.GUI = {
     
 }
 local MGUI = self.GUI
+--- @type integer[]
+self.IgnoreSkills = {}
 
 self.Data = {
     Monster = {
@@ -964,8 +966,7 @@ function self.GetNotLearnSkill()
     local tbl = {}
     local data = self.skilldata
   
-    if table.valid(data) then
-        
+    if table.valid(data) then        
         if data[1][48].value == false then--钻头
             table.insert(tbl,{actionid=11398,learn = false})
         end
@@ -1056,7 +1057,23 @@ function self.GetNotLearnSkill()
 
     end
 
-    return tbl
+    if not table.valid(self.IgnoreSkills) then
+        return tbl
+    end
+    local tbl2 = {}
+    for _, v in pairs(tbl) do
+        local ignored = false
+        for _, vv in pairs(self.IgnoreSkills) do
+           if v.actionid == vv then
+               ignored = true
+               break
+           end
+        end
+        if not ignored then
+            table.insert(tbl2, v)
+        end
+    end
+    return tbl2
 end
 
 function self.GetSkillNote() --BlueMagicLeveling  得到青魔笔记数据
