@@ -28,7 +28,7 @@ self.Data = {
     Quest = {
         [3192] = {
             start = {type = "Interact", mapid = 129 , interactid = 4302704225 , pos = {x = -64.35, y = 18.20 , z = -11.03}},
-            [1] = {type = "Interact", mapid = 134 , interactid = 4302704300 , pos = {x = -69.87, y = 43.91 , z = -5.66}},
+            [1] = {type = "Interact", mapid = 134 , interactid = 4302704300 , pos = {x = -71, y = 43.69 , z = -4.24}},
             [2] = {type = "Interact", mapid = 134 , interactid = 4302774428 , pos = {x = 170.86, y = 62.85 , z = 275.26}},
             [3] = {type = "Interact", mapid = 135 , interactid = 4302843171 , pos = {x = 156.63, y = 12.40 , z = 649.38}},
             [4] = {type = "Interact", mapid = 135 , interactid = 4302747885 , pos = {x = -85.40, y = 2.80 , z = 728.54}},
